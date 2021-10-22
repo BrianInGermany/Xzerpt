@@ -1,0 +1,41 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+    <title>Regex Matches</title>  
+</head>  
+<body>  
+<h1>Regex JSON Matches</h1>  
+ 
+<div>
+    <table  border="1">
+        
+        <tr>
+        <th><font size="5">String</font></th>
+        
+        <th><font size="5">Patterns</font></th>
+        <th><font size="5">1st Intent Matched</font></th>
+        </tr>
+        <tr>
+            {% for pattern in patterns %} 
+            <tr>
+                <td>
+                    {{ pattern[0] }}
+                </td>
+                <td>
+                    <ul>
+                        {% for pat1 in pattern[1][0] %} 
+                        <li>{{ pat1 }}</li>
+                        {% endfor %}
+                        </ul>
+                </td>
+                <td>
+                    {{ pattern[1][1] }}
+                </td>
+                
+            </tr>
+            {% endfor %} 
+    
+</div>  
+<p>See Github for <a href="https://github.com/BrianInGermany/regex-json-checker">code</a>.</p>
+</body>  
+</html> 

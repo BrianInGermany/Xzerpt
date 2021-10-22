@@ -1,0 +1,153 @@
+<!doctype html>  
+<head>
+   <title>IdeaStackr</title>
+   <style>
+      input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+  
+</head>
+<html>  
+   <body>  
+      <h1 style = "text-align: left;">IdeaStackr</h1>  
+      
+      <!-- <h3>Create a6 cards and CSV from your ideas!</h3>
+   <ul>
+      <li>Have fun.</li>
+   
+   </ul> -->
+
+      <form action="" id="form" method="POST">
+         <p><b>Info Type</b></p>
+        <input type="radio" id="paraphrase" name="info_type" value="paraphrase">
+        <label for="paraphrase">paraphrase</label><br>
+        <input type="radio" id="quote" name="info_type" value="quote">
+        <label for="css">quote</label><br>
+        <input type="radio" id="own_opinion" name="info_type" value="own_opinion">
+        <label for="javascript">own opinion</label>
+      <br/>
+         <label for="source"><b>Source</b></label><br/>
+         <input type="text" id="source" name="source">
+      <br/>
+         <label for="page"><b>Page</b></label><br/>
+         <input type="text" id="page" name="page">
+      <br/>
+      <label for="topic"><b>Topic</b></label><br>
+
+         <textarea class="input" id="topic" name="topic" rows="2" cols="80">
+</textarea>
+      <br/>
+         <label for="summary"><b>Summary</b></label><br>
+         <textarea class="input" id="summary" name="summary" rows="10" cols="80">
+</textarea>
+
+      
+         
+         <br/>
+         <input type="submit"  value="Save Card">
+         </form>
+         <button type="button" onclick="create_dl_csv()">Download Saved Cards</button>
+         <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
+         <p>See Github for <a href="https://github.com/BrianInGermany/ideastackr_app">code</a>.</p>
+   </body> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+      var form = document.getElementById('form');
+
+
+      function create_dl_csv(){
+
+      const form_dict_list = JSON.parse(localStorage.getItem('form_list'))
+
+      var rows = new Array()
+
+      for (formular in form_dict_list){
+         // var formular_row = new Array()
+         var fields = new Array();
+         for (let i = 0; i < 5; i++){
+         fields.push("");}
+      
+         for (field in formular){
+            if (field.name === "info_type"){
+               fields[0] = field.value;
+            }
+            else if (field.name === "source"){
+               fields[1] = field.value;
+            }
+            else if (field.name === "page"){
+               fields[2] = field.value;
+            }
+            else if (field.name === "topic"){
+               fields[3] = field.value;
+            }
+            else if (field.name === "summary"){
+               fields[4] = field.value;
+            }
+         }
+         // formular_row.push(fields)
+         console.log(fields);
+         rows.push(fields)
+      }
+
+      let csvContent = "data:text/csv;charset=utf-8,";
+      // console.log("Here is ROWS")
+      // console.log(rows)
+      // rows = JSON.parse(rows);
+      
+      
+      for (row in rows){
+         // console.log("ROWs is of this type:");
+         // console.log(typeof rows);
+         // console.log(row);
+         row_string = row.join("§");
+         csvContent += row_string + "\r\n";
+
+      }
+      // rows.forEach(function(rowArray) {
+      // let row = rowArray.join("§");
+      // csvContent += row + "\r\n";
+      // });
+
+      var encodedUri = encodeURI(csvContent);
+      window.open(encodedUri);
+      localStorage.clear();
+      }
+      
+
+      function appendToStorage(name, data){
+      var old_list;
+      
+      if (localStorage.getItem(name) === null){
+         old_list = new Array();
+      }
+      
+      else {old_list = JSON.parse(localStorage.getItem(name));}
+
+      
+      old_list.push(data);
+      
+      localStorage.setItem(name, JSON.stringify(old_list));
+   }
+
+
+      function logSubmit(event) {
+         appendToStorage('form_list', $("form").serializeArray());
+         event.preventDefault();
+         console.log(`Form Submitted! Time stamp: ${event.timeStamp}`);
+         document.getElementById('form').reset();
+         console.log($('form').serializeArray());
+         console.log(localStorage.getItem('form_list'));
+         
+      }
+      
+      // const log = document.getElementById('log');
+      form.addEventListener('submit', logSubmit);
+</script> 
+</html>  
