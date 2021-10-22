@@ -67,49 +67,47 @@
       const form_dict_list = JSON.parse(localStorage.getItem('form_list'))
 
       var rows = new Array()
+      let csvContent = "data:text/csv;charset=utf-8,";
 
-      for (formular in form_dict_list){
+      for (formular of form_dict_list){
+         console.log("this is type of formular")
+         console.log(typeof formular)
          // var formular_row = new Array()
          var fields = new Array();
          for (let i = 0; i < 5; i++){
          fields.push("");}
-      
+         console.log("This is formular");
+         console.log(formular);
          for (field in formular){
-            if (field.name === "info_type"){
-               fields[0] = field.value;
+            if (field["name"] == "info_type"){
+               fields[0] = field["value"];
             }
-            else if (field.name === "source"){
-               fields[1] = field.value;
+            else if (field["name"] == "source"){
+               fields[1] = field["value"];
             }
-            else if (field.name === "page"){
-               fields[2] = field.value;
+            else if (field["name"] == "page"){
+               fields[2] = field["value"];
             }
-            else if (field.name === "topic"){
-               fields[3] = field.value;
+            else if (field["name"] == "topic"){
+               fields[3] = field["value"];
             }
-            else if (field.name === "summary"){
-               fields[4] = field.value;
+            else if (field["name"] == "summary"){
+               fields[4] = field["value"];
             }
          }
          // formular_row.push(fields)
          console.log(fields);
-         rows.push(fields)
+         // rows.push(fields)
+         row_string = fields.join("§");
+         csvContent += row_string + "\r\n";
       }
 
-      let csvContent = "data:text/csv;charset=utf-8,";
       // console.log("Here is ROWS")
       // console.log(rows)
       // rows = JSON.parse(rows);
       
       
-      for (row in rows){
-         // console.log("ROWs is of this type:");
-         // console.log(typeof rows);
-         // console.log(row);
-         row_string = row.join("§");
-         csvContent += row_string + "\r\n";
-
-      }
+   
       // rows.forEach(function(rowArray) {
       // let row = rowArray.join("§");
       // csvContent += row + "\r\n";
