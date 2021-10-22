@@ -1,0 +1,31 @@
+<!doctype html>  
+<meta charset="utf-8">
+<head>
+   <title>IdeaStackr CSV Input</title>
+   <style>
+    
+      input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+</head>
+<body>
+    <h1>Convert CSV to Printable Cards</h1>
+
+    <form action="\tables" method="POST">
+        <label for="csv_text"><b>Paste CSV:</b></label><br>
+        <textarea id="csv_text" name="csv_text" rows="22" cols="80"></textarea>
+        <input type="submit"  value="Generate Cards">
+
+    </form>
+    <br/>
+    <p>See Github for <a href="https://github.com/BrianInGermany/ideastackr_app">code</a>.</p>
+
+</body>
+

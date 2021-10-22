@@ -1,4 +1,6 @@
 <!doctype html>  
+<meta charset="utf-8">
+
 <head>
    <title>IdeaStackr</title>
    <style>
@@ -20,6 +22,15 @@ button[type=button] {
   margin: 4px 2px;
   cursor: pointer;
 }
+button[id=csv_button] {
+  background-color: #6b0f86;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
    </style>
   
 </head>
@@ -28,13 +39,9 @@ button[type=button] {
       <h1 style = "text-align: left;">IdeaStackr</h1>  
       
        <h3>Create a CSV table from your ideas!</h3>
-   <ul>
-      <li>Print them to index cards <a href url ="/tables">here</a></li>
-   
-   </ul> 
 
       <form action="" id="form" method="POST">
-         <p><b>Info Type</b></p>
+         <p><b>Type</b></p>
         <input type="radio" id="paraphrase" name="info_type" value="paraphrase">
         <label for="paraphrase">paraphrase</label><br>
         <input type="radio" id="quote" name="info_type" value="quote">
@@ -60,9 +67,12 @@ button[type=button] {
       
          
          <br/>
-         <input type="submit"  value="Save Card">
+         <input type="submit"  value="Cache Card">
          </form>
          <button type="button" onclick="create_dl_csv()">Download CSV and Clear Cache</button>
+         <br/>
+         <button type="button" id="csv_button" onclick="window.location.href = '/csv_input';">Create Cards from CSV</button>
+
          <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
          <p>See Github for <a href="https://github.com/BrianInGermany/ideastackr_app">code</a>.</p>
    </body> 
@@ -109,7 +119,7 @@ button[type=button] {
          // formular_row.push(fields)
          // console.log(fields);
          // rows.push(fields)
-         row_string = fields.join("§");
+         row_string = fields.join("¥");
          csvContent += row_string + "\r\n";
       }
 

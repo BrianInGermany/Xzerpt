@@ -1,41 +1,49 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>Regex Matches</title>  
-</head>  
-<body>  
-<h1>Regex JSON Matches</h1>  
- 
-<div>
-    <table  border="1">
-        
-        <tr>
-        <th><font size="5">String</font></th>
-        
-        <th><font size="5">Patterns</font></th>
-        <th><font size="5">1st Intent Matched</font></th>
-        </tr>
-        <tr>
-            {% for pattern in patterns %} 
-            <tr>
-                <td>
-                    {{ pattern[0] }}
-                </td>
-                <td>
-                    <ul>
-                        {% for pat1 in pattern[1][0] %} 
-                        <li>{{ pat1 }}</li>
-                        {% endfor %}
-                        </ul>
-                </td>
-                <td>
-                    {{ pattern[1][1] }}
-                </td>
-                
-            </tr>
-            {% endfor %} 
+<!DOCTYPE html>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="card.css">
+
+<html>
+  <head>
+    <title>Ideastackr Index Cards</title>
+    <style type="text/css">
+        .avoid {
+          page-break-inside: avoid !important;
+          margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+        }
+      </style>
+  </head>
+  <body>
     
-</div>  
-<p>See Github for <a href="https://github.com/BrianInGermany/regex-json-checker">code</a>.</p>
-</body>  
-</html> 
+
+            {% for table in tables %} 
+            <div class="avoid">
+            <table  width="100%" height="38" border="1">
+         
+                <tr>
+                <th><font size="5">{{ table[0] }}</font></th>
+                <th><font size="5">Source: {{ table[1] }}</font></th>
+                <th><font size="5">Page: {{ table[2] }}</font></th>
+                </tr>
+                
+             </table>
+             <table width="100%" height="420" border="1">
+                <tr>
+                <th width="25%" height="38"><font size="5">Topic</font></th>
+                <th width="75%" height="38"><font size="5">Statement</font></th>
+                </tr>
+                <tr>
+                      
+                <td height="390"><font size="5">{{ table[3] }}</font></td>
+                <td height="390"><font size="5">{{ table[4] }}</font></td>
+             </tr>
+                
+             </table>
+            </div>
+          </html>
+      
+          <br/>
+            {% endfor %} 
+	
+  </body>
+</html>
