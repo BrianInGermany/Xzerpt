@@ -11,6 +11,15 @@
   margin: 4px 2px;
   cursor: pointer;
 }
+button[type=button] {
+  background-color: #3a42b1;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
    </style>
   
 </head>
@@ -18,7 +27,7 @@
    <body>  
       <h1 style = "text-align: left;">IdeaStackr</h1>  
       
-      <!-- <h3>Create a6 cards and CSV from your ideas!</h3>
+       <h3>Create a CSV table from your ideas!</h3>
    <ul>
       <li>Have fun.</li>
    
@@ -53,7 +62,7 @@
          <br/>
          <input type="submit"  value="Save Card">
          </form>
-         <button type="button" onclick="create_dl_csv()">Download Saved Cards</button>
+         <button type="button" onclick="create_dl_csv()">Download Clear Cache</button>
          <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
          <p>See Github for <a href="https://github.com/BrianInGermany/ideastackr_app">code</a>.</p>
    </body> 
@@ -78,7 +87,9 @@
          fields.push("");}
          console.log("This is formular");
          console.log(formular);
-         for (field in formular){
+         for (field of formular){
+            console.log("this is type of field");
+            console.log(typeof field);
             if (field["name"] == "info_type"){
                fields[0] = field["value"];
             }
@@ -96,7 +107,7 @@
             }
          }
          // formular_row.push(fields)
-         console.log(fields);
+         // console.log(fields);
          // rows.push(fields)
          row_string = fields.join("§");
          csvContent += row_string + "\r\n";
