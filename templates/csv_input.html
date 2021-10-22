@@ -2,6 +2,7 @@
 <meta charset="utf-8">
 <head>
    <title>IdeaStackr CSV Input</title>
+   
    <style>
     
       input[type=button], input[type=submit], input[type=reset] {
@@ -17,7 +18,9 @@
 </head>
 <body>
     <h1>Convert CSV to Printable Cards</h1>
-
+    <ul>
+        <li>For A6 cards, print two-to-a-page.</li>
+    </ul>
     <form action="\tables" method="POST">
         <label for="csv_text"><b>Paste CSV:</b></label><br>
         <textarea id="csv_text" name="csv_text" rows="22" cols="80"></textarea>
