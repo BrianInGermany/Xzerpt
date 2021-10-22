@@ -1,1 +1,1 @@
-# Web app for saving cards from UI to csv and downloading
+# Web app for saving CSV from ideas and printing to HTML
