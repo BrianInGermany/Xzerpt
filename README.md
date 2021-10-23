@@ -37,7 +37,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
   
 ### 2. Card generation
 
-- Click the `Create Cards from CSV` button to open the card creator.
+- Click the `Create Cards from CSV` button on the homepage to open the card creator.
 - Open the generated CSV file, copy and paste its contents and press generate:
 
     <img src=".\exampleImages\cardcreator.png" alt="cardcreator" width="70%"/>
