@@ -47,6 +47,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
     <img src=".\exampleImages\cardExample.png" alt="cardPicture" width="70%"/>
 
 - Print the website using the browser to get your cards (print two-to-a-page for A6-size index cards).
+  - Works for A4 or US-Letter paper size.
 
 ### 3. Card clustering
 
