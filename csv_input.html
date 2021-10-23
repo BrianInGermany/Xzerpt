@@ -1,10 +1,153 @@
 <!doctype html>  
 <meta charset="utf-8">
 <head>
+    <script id="tableBlock" type="text/html">
+    
+        <table  width="100%" height="38" border="1">
+     
+            <tr>
+            <th><font size="5">Type: TTT</font></th>
+            <th><font size="5">Source: SSS</font></th>
+            <th><font size="5">Page: PPP</font></th>
+            </tr>
+            
+         </table>
+         <table width="100%" height="400" border="1">
+            <tr>
+            <th width="25%" height="38"><font size="5">Topic</font></th>
+            <th width="75%" height="38"><font size="5">Statement</font></th>
+            </tr>
+            <tr>
+                  
+            <td height="380"><font size="5">TPTP</font></td>
+            <td height="380"><font size="5">SUSU</font></td>
+         </tr>
+            
+         </table>
+        
+</script>
+    <script>
+        function appendToStorage(name, data){
+    var old = localStorage.getItem(name);
+    if(old === null) old = "";
+    localStorage.setItem(name, old + data);
+}
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone');
+    
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+            }
+        function clear_and_gen_tables(){
+    
+            var csv_data = localStorage.getItem('all_csv');
+            console.log("this is csv_data");
+            console.log(csv_data);
+            var rows = csv_data.split('\\r\\n');
+            rows = rows[0].split('\r\n');
+            console.log("this is rows:");
+            console.log(rows);
+            document.getElementById("targetElement").innerHTML = "";
+            count = 0;
+            for (row of rows){
+                if (row == ''){
+                    continue;
+                }
+                count += 1;
+                console.log(count);
+                console.log("this is a row")
+                console.log(row)
+                var fields = row.split('¥');
+                
+                var div = document.createElement('div');
+                div.setAttribute('class', 'avoid');
+                div.innerHTML = document.getElementById('tableBlock').innerHTML;
+    
+                // You could optionally even do a little bit of string templating
+                div.innerHTML = div.innerHTML
+                    .replace(/TTT/g, fields[0])
+                    .replace(/SSS/g, fields[1])
+                    .replace(/PPP/g, fields[2])
+                    .replace(/TPTP/g, fields[3])
+                    .replace(/SUSU/g, fields[4]);
+                
+                document.getElementById('targetElement').appendChild(div);
+                }
+            localStorage.setItem('all_csv', '');
+        }
+        function removeDragData(ev) {
+      console.log('Removing drag data');
+    
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to remove the drag data
+        ev.dataTransfer.items.clear();
+      } else {
+        // Use DataTransfer interface to remove the drag data
+        ev.dataTransfer.clearData();
+      }
+    }
+        
+    function dropHandler(ev) {
+        alert("Files Dropped!")
+      console.log('File(s) dropped');
+    
+      // Prevent default behavior (Prevent file from being opened)
+      ev.preventDefault();
+    
+      
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+          // If dropped items aren't files, reject them
+          if (ev.dataTransfer.items[i].kind === 'file') {
+            var file = ev.dataTransfer.items[i].getAsFile();
+            console.log('... file[' + i + '].name = ' + file.name);
+          
+            var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('all_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
+          }
+        }
+      } else {
+        // Use DataTransfer interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+          console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+        
+        var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('all_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
+       
+      
+        
+        }
+        
+      } 
+        console.log("heres local csv storage:");
+        console.log(localStorage.getItem('all_csv'));
+      // Pass event to removeDragData for cleanup
+      removeDragData(ev)
+    }
+        
+    
+    
+        
+    </script>
    <title>IdeaStackr Card Creator</title>
    
    <style>
-    
+
+#drop_zone {
+  border: 5px solid blue;
+  width:  200px;
+  height: 100px;
+}
+
       input[type=button], input[type=submit], input[type=reset] {
   background-color: #4CAF50;
   border: none;
@@ -16,21 +159,23 @@
 }
    </style>
 </head>
-<body>
+<body id="targetElement">
     <h1>Ideastackr Card Creator</h1>
     <ul>
         <li>For index cards, print two-to-a-page.</li>
     </ul>
-    <form action="\tables" method="POST">
-        <label for="csv_text"><b>Paste CSV:</b></label><br>
-        <textarea id="csv_text" name="csv_text" rows="22" cols="80"></textarea>
-        <br/>
-        <input type="submit"  value="Generate Cards">
-
-    </form>
+    
+    <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        <p>Drag and drop file(s) to generate idea cards from.</p>
+      </div>
+    <br/>
+    <button type="button" id="send_files" onclick="clear_and_gen_tables()">Generate Cards</button>
     <br/>
     <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
     <p>See Github for <a href="https://github.com/BrianInGermany/IdeaStackr">code and instructions</a>.</p>
 
 </body>
+
+
+</html>
 
