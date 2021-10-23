@@ -8,8 +8,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
 
 ## Usage
 
-IdeaStackr is hosted at [thejunkyard.cc/ideastackr](https:/thejunkyard.cc/ideastackr). 
-Alternatively, you can run Ideastackr locally with Flask.
+IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https:/thejunkyard.cc/IdeaStackr). 
 ## Steps:
 
 ### 1. Data collection
@@ -37,12 +36,12 @@ Alternatively, you can run Ideastackr locally with Flask.
     ```
   - Pressing `Cache Card` will add the card to temporary storage. When you're done caching cards, click `Download and Clear Cache` to get your CSV file.
   
-  - Caveat: The ¥ symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
+  - Caveat: The `¥` symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
   
 ### 2. Card generation
 
 - Click the `Create Cards from CSV` button on the homepage to open the card creator.
-- Open the generated CSV file, copy and paste its contents and press `Generate Cards`:
+- Drag and drop IdeaStackr CSVs into the field, and press `Generate Cards`:
 
     <img src=".\exampleImages\cardcreator.png" alt="cardcreator" width="70%"/>
 
