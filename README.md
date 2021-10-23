@@ -10,7 +10,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
 
 ### 1. Data collection
 
-- Fill out idea templates and save to CSV:
+- Conduct research and fill out idea templates:
 
   <a href url="http://ideastackr.herokuapp.com"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
 
