@@ -15,7 +15,7 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
 
 - Conduct research and fill out idea templates:
 
-  <a href url="https://thejunkyard.cc/IdeaStackr"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
+  <img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/>
 
   - The idea template contains the following fields:
 
