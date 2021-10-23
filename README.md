@@ -10,11 +10,11 @@ Record your ideas in an HTML form and then generate idea cards you can cluster i
 
 ### 1. Data collection
 
-- Fill out idea card templates and save to CSV:
+- Fill out idea templates and save to CSV:
 
   <a href url="http://ideastackr.herokuapp.com"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
 
-  - The idea card template contains the following fields:
+  - The idea template contains the following fields:
 
     - `Type`: _quote_, _paraphrase_, or _own opinion_
     - `Source`: unique name or nickname you keep source details saved under (wherever)
