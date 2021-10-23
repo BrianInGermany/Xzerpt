@@ -8,14 +8,14 @@ Record your ideas in an web interface and then generate idea cards you can clust
 
 ## Usage
 
-IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https:/thejunkyard.cc/IdeaStackr). 
+IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaStackr). 
 ## Steps:
 
 ### 1. Data collection
 
 - Conduct research and fill out idea templates:
 
-  <a href url="https:/thejunkyard.cc/ideastackr"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
+  <a href url="https://thejunkyard.cc/ideastackr"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
 
   - The idea template contains the following fields:
 
