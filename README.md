@@ -8,7 +8,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
 
 ## Usage
 
-IdeaStackr is hosted at [ideastackr.herokuapp.com](http://ideastackr.herokuapp.com). 
+IdeaStackr is hosted at [thejunkyard.cc/ideastackr](https:/thejunkyard.cc/ideastackr). 
 Alternatively, you can run Ideastackr locally with Flask.
 ## Steps:
 
@@ -16,7 +16,7 @@ Alternatively, you can run Ideastackr locally with Flask.
 
 - Conduct research and fill out idea templates:
 
-  <a href url="http://ideastackr.herokuapp.com"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
+  <a href url="https:/thejunkyard.cc/ideastackr"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
 
   - The idea template contains the following fields:
 
