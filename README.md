@@ -33,7 +33,7 @@ Record your ideas in an web interface and then generate idea cards you can clust
     ```
   - Pressing `Cache Card` will add the card to temporary storage. When you're done caching cards, click `Download and Clear Cache` to get your CSV file.
   
-  - Caveat: The _¥_ symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
+  - Caveat: The ¥ symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
   
 ### 2. Card generation
 
