@@ -1,4 +1,4 @@
-# IdeaStackr: a framework for organizing and structuring research
+# IdeaStackr: a framework for clustering research
 
 ## Description:
 
@@ -12,7 +12,7 @@ Record your ideas in an HTML form and then generate idea cards you can cluster i
 
 - Fill out idea card templates and save to CSV:
 
-      <a href url="http://ideastackr.herokuapp.com"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
+  <a href url="http://ideastackr.herokuapp.com"><img src=".\exampleImages\ideastackrUI.png" alt="UIPicture" width="70%"/></a>
 
   - The idea card template contains the following fields:
 
