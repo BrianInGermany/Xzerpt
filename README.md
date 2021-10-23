@@ -6,6 +6,10 @@ IdeaStackr uses idea clustering and source management to bring structure to your
 
 Record your ideas in an web interface and then generate idea cards you can cluster into stacks on your desk.
 
+## Usage
+
+IdeaStackr is hosted at [ideastackr.herokuapp.com](http://ideastackr.herokuapp.com). 
+Alternatively, you can run Ideastackr locally with Flask.
 ## Steps:
 
 ### 1. Data collection
