@@ -147,6 +147,7 @@ button[id=csv_button] {
       var encodedUri = encodeURI(csvContent);
       window.open(encodedUri);
       localStorage.clear();
+      document.getElementById("card_count").innerHTML = "0 Cards in Cache"
       }
       
 
