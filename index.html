@@ -171,7 +171,7 @@ button[id=csv_button] {
          }
          card_count = parseInt(localStorage.getItem("card_count")) + 1
          localStorage.setItem("card_count", card_count)
-         document.getElementById("card_count").innerHTML = localStorage.getItem("card_count") + " Cards in Cache";
+         document.getElementById("card_count").innerHTML = card_count + " Cards in Cache";
          event.preventDefault();
          console.log(`Form Submitted! Time stamp: ${event.timeStamp}`);
          document.getElementById('form').reset();
