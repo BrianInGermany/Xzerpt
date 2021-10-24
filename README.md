@@ -39,7 +39,7 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
 ### 2. Card generation
 
 - Click the `Create Cards from CSV` button on the homepage to open the card creator.
-- Drag and drop IdeaStackr CSVs into the field, and press `Generate Cards`:
+- Drag and drop IdeaStackr CSVs into the field, and press `Create Cards`:
 
     <img src=".\exampleImages\cardcreator1.png" alt="cardcreator" width="70%"/>
 
