@@ -48,7 +48,6 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
     <img src=".\exampleImages\ideacard.png" alt="cardPicture" width="70%"/>
 
 - Print the website using the browser to get your cards (print two-to-a-page for A6-size index cards).
-  - Works for A4 or US-Letter paper size.
 
 ### 3. Card clustering
 
