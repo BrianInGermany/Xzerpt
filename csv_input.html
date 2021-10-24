@@ -6,6 +6,7 @@
         <table  width="100%" height="38" border="1">
      
             <tr>
+            <th><font size="5">DDD</font></th>
             <th><font size="5">Type: TTT</font></th>
             <th><font size="5">Source: SSS</font></th>
             <th><font size="5">Page: PPP</font></th>
@@ -32,14 +33,8 @@
     if(old === null) old = "";
     localStorage.setItem(name, old + data);
 }
-        function dragOverHandler(ev) {
-            console.log('File(s) in drop zone');
-    
-            // Prevent default behavior (Prevent file from being opened)
-            ev.preventDefault();
-            }
-        function clear_and_gen_tables(){
-    
+function clear_and_gen_tables(){
+            
             var csv_data = localStorage.getItem('all_csv');
             console.log("this is csv_data");
             console.log(csv_data);
@@ -47,14 +42,15 @@
             rows = rows[0].split('\r\n');
             console.log("this is rows:");
             console.log(rows);
+            var id_count = parseInt(document.getElementById("id_start").value) -1;
+
             document.getElementById("targetElement").innerHTML = "";
-            count = 0;
+
             for (row of rows){
                 if (row == ''){
                     continue;
                 }
-                count += 1;
-                console.log(count);
+                id_count += 1;
                 console.log("this is a row")
                 console.log(row)
                 var fields = row.split('¥');
@@ -65,6 +61,7 @@
     
                 // You could optionally even do a little bit of string templating
                 div.innerHTML = div.innerHTML
+                    .replace(/DDD/g, id_count)
                     .replace(/TTT/g, fields[0])
                     .replace(/SSS/g, fields[1])
                     .replace(/PPP/g, fields[2])
@@ -75,6 +72,13 @@
                 }
             localStorage.setItem('all_csv', '');
         }
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone');
+    
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+            }
+       
         function removeDragData(ev) {
       console.log('Removing drag data');
     
@@ -175,8 +179,11 @@
     </ul>
     
     <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-        <p>Drag and drop file(s) to generate idea cards from.</p>
+        <p>Drag file(s) here to generate idea cards from.</p>
       </div>
+    <br/>
+    <label for="id_start">Number to start IDs from:</label><br/>
+    <input id="id_start" type="number" name="id_start" min="1" value="1"> 
     <br/>
     <button type="button" id="send_files" onclick="clear_and_gen_tables()">Generate Cards</button>
     <br/>
@@ -184,6 +191,9 @@
     <p>See Github for <a href="https://github.com/BrianInGermany/IdeaStackr">code and instructions</a>.</p>
 
 </body>
+<script>
+
+</script>
 
 
 </html>
