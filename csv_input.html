@@ -3,7 +3,7 @@
 <head>
     <script id="tableBlock" type="text/html">
     
-        <table  width="100%" height="38" border="1">
+        <table class="styled-table"  width="100%" height="30" border="1">
      
             <tr>
             <th><font size="5">DDD</font></th>
@@ -13,15 +13,15 @@
             </tr>
             
          </table>
-         <table width="100%" height="400" border="1">
+         <table class="styled-table" width="100%" height="380" border="1">
             <tr>
-            <th width="25%" height="38"><font size="5">Topic</font></th>
-            <th width="75%" height="38"><font size="5">Statement</font></th>
+            <th width="25%" height="30"><font size="5">Topic</font></th>
+            <th width="75%" height="30"><font size="5">Statement</font></th>
             </tr>
             <tr>
                   
-            <td height="380"><font size="5">TPTP</font></td>
-            <td height="380"><font size="5">SUSU</font></td>
+            <td height="350"><font size="5">TPTP</font></td>
+            <td height="350"><font size="5">SUSU</font></td>
          </tr>
             
          </table>
@@ -58,7 +58,7 @@ function clear_and_gen_tables(){
                 var div = document.createElement('div');
                 div.setAttribute('class', 'avoid');
                 div.innerHTML = document.getElementById('tableBlock').innerHTML;
-    
+                var br = document.createElement('br');
                 // You could optionally even do a little bit of string templating
                 div.innerHTML = div.innerHTML
                     .replace(/DDD/g, id_count)
@@ -69,6 +69,7 @@ function clear_and_gen_tables(){
                     .replace(/SUSU/g, fields[4]);
                 
                 document.getElementById('targetElement').appendChild(div);
+                document.getElementById('targetElement').appendChild(br);
                 }
             localStorage.setItem('all_csv', '');
         }
@@ -145,6 +146,35 @@ function clear_and_gen_tables(){
    <title>IdeaStackr Card Creator</title>
    
    <style>
+       *{
+        font-family: "Trebuchet MS";
+       }
+.styled-table {
+  font-family: "Trebuchet MS";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.styled-table td, .styled-table th {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+
+
+.styled-table th {
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
+  /* text-align: left; */
+  background-color: white;
+  color: black;
+}
+.avoid {
+    page-break-inside: avoid !important;
+    margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+  }
+
+
   input[type=button], input[type=submit], input[type=reset], button[type=button] {
   background-color: #4CAF50;
   border: none;
