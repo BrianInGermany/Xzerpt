@@ -34,7 +34,7 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
     ```
   - Pressing `Cache Card` will add the card to temporary storage. When you're done caching cards, click `Download and Clear Cache` to get your CSV file.
   
-  - Caveat: The `¥` symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
+  - Caveat: The `|` symbol is the delimiter and using one in the template will break the CSV creation. Substitute them with some other character. 
   
 ### 2. Card generation
 
