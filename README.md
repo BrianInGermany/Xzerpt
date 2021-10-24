@@ -4,12 +4,10 @@
 
 IdeaStackr uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
 
-Record your ideas in an web interface and then generate idea cards you can cluster into stacks on your desk.
-
-## Usage
+Record your ideas in an web interface and then create printable idea cards you can cluster into stacks on your desk.
 
 IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaStackr). 
-## Steps:
+## Usage
 
 ### 1. Data collection
 
