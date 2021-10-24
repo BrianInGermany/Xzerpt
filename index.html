@@ -70,7 +70,7 @@ button[id=csv_button] {
       
          
          <br/>
-         <input type="submit"  value="Cache Card">
+         <input type="submit"  value="Cache Card"><div id="card_count"></div>
          </form>
          <button type="button" onclick="create_dl_csv()">Download CSV and Clear Cache</button>
          <br/>
@@ -163,9 +163,17 @@ button[id=csv_button] {
       localStorage.setItem(name, JSON.stringify(old_list));
    }
 
-
+      
       function logSubmit(event) {
          appendToStorage('form_list', $("form").serializeArray());
+         if (localStorage.getItem("card_count") === null){
+            localStorage.setItem("card_count", 0)
+         }
+         card_count = parseInt(localStorage.getItem("card_count")) + 1
+         localStorage.setItem("card_count", card_count)
+         var count_p = document.createElement('p');
+         count_p.innerHTML = localStorage.getItem("card_count") + " Cards in Cache";
+         document.getElementById("card_count").appendChild(count_p);
          event.preventDefault();
          console.log(`Form Submitted! Time stamp: ${event.timeStamp}`);
          document.getElementById('form').reset();
