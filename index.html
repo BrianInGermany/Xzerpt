@@ -112,9 +112,15 @@ button[id=csv_button] {
                fields[2] = field["value"];
             }
             else if (field["name"] == "topic"){
+               if (fields[3].includes("\r\n")){
+                     fields[3].replace("\r\n", "\n")
+               }
                fields[3] = field["value"];
             }
             else if (field["name"] == "summary"){
+               if (fields[4].includes("\r\n")){
+                     fields[4].replace("\r\n", "\n")
+               }
                fields[4] = field["value"];
             }
          }
