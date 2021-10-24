@@ -91,8 +91,8 @@ button[id=csv_button] {
       let csvContent = "data:text/csv;charset=utf-8,";
 
       for (formular of form_dict_list){
-         console.log("this is type of formular")
-         console.log(typeof formular)
+         // console.log("this is type of formular")
+         // console.log(typeof formular)
          // var formular_row = new Array()
          var fields = new Array();
          for (let i = 0; i < 5; i++){
@@ -100,8 +100,8 @@ button[id=csv_button] {
          console.log("This is formular");
          console.log(formular);
          for (field of formular){
-            console.log("this is type of field");
-            console.log(typeof field);
+            // console.log("this is type of field");
+            // console.log(typeof field);
             if (field["name"] == "info_type"){
                fields[0] = field["value"];
             }
@@ -115,14 +115,16 @@ button[id=csv_button] {
                
                fields[3] = field["value"];
                if (fields[3].includes("\r\n")){
-                  fields[3].replace("\r\n", "\n")
+                  console.log("Found r and n in topic");
+                  fields[3] = fields[3].replace(/\r\n/g, " ")
                }
             }
             else if (field["name"] == "summary"){
              
                fields[4] = field["value"];
                if (fields[4].includes("\r\n")){
-                  fields[4].replace("\r\n", "\n")
+                  console.log("Found r and n in statement");
+                  fields[4] = fields[4].replace(/\r\n/g, " ")
                }
             }
          }
