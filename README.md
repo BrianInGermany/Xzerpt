@@ -1,5 +1,4 @@
-# IdeaStackr: a framework for clustering research
-
+# IdeaStackr: a framework for writing papers
 ## Description:
 
 IdeaStackr uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
