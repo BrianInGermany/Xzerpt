@@ -1,7 +1,7 @@
-# Xzerpt: a framework for organizing research data
+# Xzerpt: a framework for clustering research
 ## Description:
 
-IdeaStackr uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
+Xzerpt uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
 
 Record your ideas in an web interface and then create printable idea cards you can cluster into stacks on your desk.
 
@@ -38,7 +38,7 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 ### 2. Card generation
 
 - Click the `Create Cards from CSV` button on the homepage to open the card creator.
-- Drag and drop IdeaStackr CSVs into the field, and press `Create Cards`:
+- Drag and drop Xzerpt CSVs into the field, and press `Create Cards`:
 
     <img src=".\exampleImages\cardcreator5.png" alt="cardcreator" width="70%"/>
 
