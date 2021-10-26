@@ -47,7 +47,9 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
     <img src="https://xzerpt.com/exampleImages/xzerptCard.png" alt="cardPicture" width="70%"/>
 
 - Print the website using the browser to get your cards
-  - Print to A4-size PDF and then print the PDF two-to-a-page for A6-size index cards.
+  - Print to A4-size PDF and then print the PDF two-to-a-page for A6 index cards.
+  - On A4 size without headers, the cards print two-to-a-page
+  
 
 ### 3. Card clustering
 
