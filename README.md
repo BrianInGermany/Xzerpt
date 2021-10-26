@@ -86,13 +86,15 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 
 ## Background: Excerpting
 
-The system behind Xzerpt is called excerpting (German: *Exzerpieren*)
+The system behind Xzerpt is a type of academic note-taking called excerpting (German: *Exzerpieren*)
 
    [<img src="https://xzerpt.com/exampleImages/exzerpiren.jpg" alt="exzerpt"/>][1]
 
 - [Taking Notes from Research Reading](https://advice.writing.utoronto.ca/researching/notes-from-research/), University of Toronto
 - [How do I excerpt?](https://www.uni-kassel.de/uni/index.php?eID=dumpFile&t=f&f=907&token=57252036805e1227831a802f377dde1c13925dbc), Uni Kassel
 - [Ein Exzerpt schreiben](https://www.scribbr.de/studium/exzerpt/), scribbr.de
+- [Taking Notes](https://libguides.gatech.edu/c.php?g=54271&p=350393), gatech.edu
+- [How to Take Good Notes](https://sites.google.com/site/research4digitalworld/take-notes)
 
 <!-- - [Exzerpieren](https://www.europa-uni.de/de/struktur/zsfl/institutionen/schreibzentrum/angebote/lehrende/materialien/Exzerpieren.pdf), Europa-Uni Frankfurt (Oder)
 - [Leitfaden: Ein Exzerpt erstllen](https://mentoren.philol.uni-leipzig.de/fileadmin/mentoren.philol.uni-leipzig.de/uploads/dokumente/Leitfaden_Exzerpt_01.pdf), Uni Leipzig -->
