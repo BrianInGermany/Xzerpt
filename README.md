@@ -1,7 +1,7 @@
-# Xzerpt: a framework for clustering research
+# Xzerpt: a framework for clustering research notes
 ## Description:
 
-Xzerpt uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
+Xzerpt uses idea clustering and source management to bring structure to your research notes and keep track of what ideas you found where. 
 
 Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
 
@@ -90,7 +90,10 @@ The system behind Xzerpt is called excerpting (German: *Exzerpieren*)
 
    [<img src="https://xzerpt.com/exampleImages/exzerpiren.jpg" alt="exzerpt"/>][1]
 
+- [Taking Notes from Research Reading](https://advice.writing.utoronto.ca/researching/notes-from-research/), University of Toronto
 - [How do I excerpt?](https://www.uni-kassel.de/uni/index.php?eID=dumpFile&t=f&f=907&token=57252036805e1227831a802f377dde1c13925dbc), Uni Kassel
+- [Ein Exzerpt schreiben](https://www.scribbr.de/studium/exzerpt/), scribbr.de
+
 <!-- - [Exzerpieren](https://www.europa-uni.de/de/struktur/zsfl/institutionen/schreibzentrum/angebote/lehrende/materialien/Exzerpieren.pdf), Europa-Uni Frankfurt (Oder)
 - [Leitfaden: Ein Exzerpt erstllen](https://mentoren.philol.uni-leipzig.de/fileadmin/mentoren.philol.uni-leipzig.de/uploads/dokumente/Leitfaden_Exzerpt_01.pdf), Uni Leipzig -->
 
