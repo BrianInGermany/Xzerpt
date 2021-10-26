@@ -1,11 +1,11 @@
-# IdeaStackr: a framework for writing papers
+# Xzerpt: a framework for organizing research data
 ## Description:
 
 IdeaStackr uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
 
 Record your ideas in an web interface and then create printable idea cards you can cluster into stacks on your desk.
 
-IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaStackr). 
+Xzerpt is hosted at [xzerpt.com](https://xzerpt.com). 
 ## Usage
 
 ### 1. Data collection
@@ -24,8 +24,8 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
 
   - Source details should contain the name/nickname used in the csv and a way to find the source (URL, book title, ISBN, etc):
     ```txt
-    ideastackr
-      https://github.com/BrianInGermany/IdeaStackr
+    Xzerpt
+      https://github.com/BrianInGermany/Xzerpt
     brian
       https://github.com/BrianInGermany
     bible
@@ -84,12 +84,10 @@ IdeaStackr is hosted at [thejunkyard.cc/IdeaStackr](https://thejunkyard.cc/IdeaS
 
 ## Background: Excerpting
 
-The system behind IdeaStackr is called excerpting (German: *Exzerpieren*)
+The system behind Xzerpt is called excerpting (German: *Exzerpieren*)
 
    [<img src=".\exampleImages\exzerpiren.jpg" alt="exzerpt"/>][1]
 
-- [Definition: Exzerpieren](https://www.uni-erfurt.de/seminarfach/kurs/9/#c67025), Uni Erfurt
-- [Leitfaden zur Erstellung eines Exzerpts](https://www.uni-bielefeld.de/erziehungswissenschaft//scs/pdf/leitfaeden/studierende/exzerpt.pdf), Uni Bielefeld
 - [How do I excerpt?](https://www.uni-kassel.de/uni/index.php?eID=dumpFile&t=f&f=907&token=57252036805e1227831a802f377dde1c13925dbc), Uni Kassel
 <!-- - [Exzerpieren](https://www.europa-uni.de/de/struktur/zsfl/institutionen/schreibzentrum/angebote/lehrende/materialien/Exzerpieren.pdf), Europa-Uni Frankfurt (Oder)
 - [Leitfaden: Ein Exzerpt erstllen](https://mentoren.philol.uni-leipzig.de/fileadmin/mentoren.philol.uni-leipzig.de/uploads/dokumente/Leitfaden_Exzerpt_01.pdf), Uni Leipzig -->
