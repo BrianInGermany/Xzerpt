@@ -3,7 +3,7 @@
 
 Xzerpt uses idea clustering and source management to bring structure to your research data and keep track of what ideas you found where. 
 
-Record your ideas in an web interface and then create printable idea cards you can cluster into stacks on your desk.
+Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
 
 Xzerpt is hosted at [xzerpt.com](https://xzerpt.com). 
 ## Usage
@@ -12,7 +12,7 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 
 - Conduct research and fill out idea templates:
 
-  <img src=".\exampleImages\ideastackrUI1.png" alt="UIPicture" width="70%"/>
+  <img src="https://xzerpt.com/exampleImages/xzerptUI.png" alt="UIPicture" width="70%"/>
 
   - The idea template contains the following fields:
 
@@ -40,11 +40,11 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 - Click the `Create Cards from CSV` button on the homepage to open the card creator.
 - Drag and drop Xzerpt CSVs into the field, and press `Create Cards`:
 
-    <img src=".\exampleImages\cardcreator5.png" alt="cardcreator" width="70%"/>
+    <img src="https://xzerpt.com/exampleImages/xzerptcreator.png" alt="cardcreator" width="70%"/>
 
 - Sample output:
   
-    <img src=".\exampleImages\ideacard1.png" alt="cardPicture" width="70%"/>
+    <img src="https://xzerpt.com/exampleImages/xzerptCard.png" alt="cardPicture" width="70%"/>
 
 - Print the website using the browser to get your cards
   - Print to A4-size PDF and then print the PDF two-to-a-page for A6-size index cards.
@@ -52,14 +52,14 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 ### 3. Card clustering
 
 - Create a coordinate system on your desk with 1, 2, 3, 4 on one axis and A, B, C, D, E on the other. Make it big enough to put one idea card in each cell.
-- Cluster similar idea cards together. Once two or three cards are in one stack, name the stack. Write down its name on this chart ([pdf link](categoryTable.pdf)):
+- Cluster similar Xzerpt cards together. Once two or three cards are in one stack, name the stack. Write down its name on this chart ([pdf link](categoryTable.pdf)):
 
-  [<img src=".\exampleImages\categoryTable.png" alt="chartPicture" width="300"/>](.\exampleImages\categoryTable.pdf)
+  [<img src="https://xzerpt.com/exampleImages/categoryTable.png" alt="chartPicture" width="300"/>](https://xzerpt.com/exampleImages/categoryTable.pdf)
 
 - **Rename stacks as often as you like!** The point is to have an appropriate name at the end. You may also want to merge or split stacks as you go.
 - When you are finished, you have stacks that represent the low-level structure of your information, like this:
 
-  <img src=".\exampleImages\clusterCards.jpg" alt="clusteredCards" width="500"/>
+  <img src="https://xzerpt.com/exampleImages/clusterCards.jpg" alt="clusteredCards" width="500"/>
 
 ### 4. Stack clustering
 
@@ -86,7 +86,7 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 
 The system behind Xzerpt is called excerpting (German: *Exzerpieren*)
 
-   [<img src=".\exampleImages\exzerpiren.jpg" alt="exzerpt"/>][1]
+   [<img src="https://xzerpt.com/exampleImages/exzerpiren.jpg" alt="exzerpt"/>][1]
 
 - [How do I excerpt?](https://www.uni-kassel.de/uni/index.php?eID=dumpFile&t=f&f=907&token=57252036805e1227831a802f377dde1c13925dbc), Uni Kassel
 <!-- - [Exzerpieren](https://www.europa-uni.de/de/struktur/zsfl/institutionen/schreibzentrum/angebote/lehrende/materialien/Exzerpieren.pdf), Europa-Uni Frankfurt (Oder)

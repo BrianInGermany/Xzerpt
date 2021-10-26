@@ -109,7 +109,7 @@ function clear_and_gen_tables(){
       } else {
         // Use DataTransfer interface to remove the drag data
         ev.dataTransfer.clearData();
-        document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create idea cards from.";
+        document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
       }
     }
         
@@ -240,7 +240,7 @@ function clear_and_gen_tables(){
 <body id="targetElement">
     <h1>Xzerpt Card Creator</h1>
     <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-        <ul id="drop_text">Drag file(s) here to create idea cards from.</ul>
+        <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
       </div>
     <br/>
     <label for="id_start">Number to start IDs from:</label><br/>
