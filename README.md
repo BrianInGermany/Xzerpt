@@ -10,11 +10,11 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
 
 ### 1. Data collection
 
-- Conduct research and fill out idea templates:
+- Conduct research and fill out Xzerpt templates:
 
   <img src="https://xzerpt.com/exampleImages/xzerptUI.png" alt="UIPicture" width="70%"/>
 
-  - The idea template contains the following fields:
+  - The template contains the following fields:
 
     - `Type`: _quote_, _paraphrase_, or _own opinion_
     - `Source`: unique name or nickname you keep source details saved under (wherever)
