@@ -1,3 +1,4 @@
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,6 +19,7 @@
 <meta property="twitter:title" content="Xzerpt">
 <meta property="twitter:description" content="a framework for clustering research notes">
 <meta property="twitter:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+</head>
 
 # a framework for clustering research notes
 ## Description:
