@@ -1,4 +1,25 @@
-# Xzerpt: a framework for clustering research notes
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
+<meta name="description" content="a framework for clustering research notes">
+<meta name="title" content="Xzerpt">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xzerpt.com">
+<meta property="og:title" content="Xzerpt">
+<meta property="og:description" content="a framework for clustering research notes">
+<meta property="og:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://xzerpt.com">
+<meta property="twitter:title" content="Xzerpt">
+<meta property="twitter:description" content="a framework for clustering research notes">
+<meta property="twitter:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+
+# a framework for clustering research notes
 ## Description:
 
 Xzerpt uses idea clustering and source management to bring structure to your research notes and keep track of what ideas you found where. 
