@@ -1,6 +1,3 @@
-# a framework for clustering research notes
-## Description:
-
 Xzerpt uses idea clustering and source management to bring structure to your research notes and keep track of what ideas you found where. 
 
 Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
