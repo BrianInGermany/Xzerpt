@@ -5,7 +5,7 @@ Xzerpt uses idea clustering and source management to bring structure to your res
 
 Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
 
-Xzerpt is hosted at [xzerpt.com](https://xzerpt.com). 
+Use the Xzerpt interface at [xzerpt.com/input](https://xzerpt.com/input). 
 ## Usage
 
 ### 1. Data collection
@@ -37,7 +37,7 @@ Xzerpt is hosted at [xzerpt.com](https://xzerpt.com).
   
 ### 2. Card generation
 
-- Click the `Create Cards from CSV` button on the homepage to open the card creator.
+- Click the `Create Cards from CSV` button on [xzerpt.com/input](https://xzerpt.com/input) to open the card creator.
 - Drag and drop Xzerpt CSVs into the field, and press `Create Cards`:
 
     <img src="https://xzerpt.com/exampleImages/xzerptcreator.png" alt="cardcreator" width="70%"/>
