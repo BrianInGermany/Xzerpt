@@ -113,6 +113,7 @@
             div.setAttribute('class', 'container');
             div.setAttribute('ondrop', "dropHandler(event);");
             div.setAttribute('id', "drop_zone");
+            div.setAttribute('style', "z-index: -1; position:relative;")
             div.setAttribute('ondragover', "dragOverHandler(event);" );
             div.innerHTML = "<button type='button' id='send_files' onclick='clear_and_gen_cards()'>Create Cards</button><br/><ul id='drop_text'>Drag file(s) here to create Xzerpt cards from.</ul>";
         
