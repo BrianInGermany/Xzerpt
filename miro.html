@@ -8,8 +8,17 @@
     if(old === null) old = "";
     localStorage.setItem(name, old + data);
 }
-function clear_and_gen_cards(){
+
             
+            
+
+            miro.onReady(() => {
+            miro.initialize({
+                extensionPoints: {
+                bottomBar: {
+                    title: 'Xzerpt Cards',
+                    svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+                    onClick: () => {
             var csv_data = localStorage.getItem('all_csv');
             console.log("this is csv_data");
             console.log(csv_data);
@@ -18,14 +27,6 @@ function clear_and_gen_cards(){
             console.log("this is rows:");
             console.log(rows);
             var id_count = parseInt(document.getElementById("id_start").value) -1;
-
-            miro.onReady(() => {
-            miro.initialize({
-                extensionPoints: {
-                bottomBar: {
-                    title: 'Xzerpt',
-                    svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
-                    onClick: () => {
             for (row of rows){
                 if (row == ''){
                     continue;
@@ -34,6 +35,7 @@ function clear_and_gen_cards(){
                 console.log("this is a row")
                 console.log(row)
                 var fields = row.split('|');
+                
                 await miro.board.widgets.create({type: 'card', text: field[3]})
             
                 }
@@ -45,7 +47,7 @@ function clear_and_gen_cards(){
                 }
             })
             })
-        }
+        
 
         function dragOverHandler(ev) {
             console.log('File(s) in drop zone');
@@ -126,9 +128,5 @@ function clear_and_gen_cards(){
    
     </script>
 </head>
-<body>
-    <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-        <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
-      </div>
-</body>
+
 </html>
