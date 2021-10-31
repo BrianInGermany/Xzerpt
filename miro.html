@@ -3,19 +3,132 @@
 <head>
     <script src="https://miro.com/app/static/sdk.1.1.js"></script>
     <script>
-    miro.onReady(() => {
-      miro.initialize({
-        extensionPoints: {
-          bottomBar: {
-            title: 'Some title',
-            svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
-            onClick: () => {
-              alert('Hi!')
+                function appendToStorage(name, data){
+    var old = localStorage.getItem(name);
+    if(old === null) old = "";
+    localStorage.setItem(name, old + data);
+}
+function clear_and_gen_cards(){
+            
+            var csv_data = localStorage.getItem('all_csv');
+            console.log("this is csv_data");
+            console.log(csv_data);
+            var rows = csv_data.split('\\r\\n');
+            rows = rows[0].split('\r\n');
+            console.log("this is rows:");
+            console.log(rows);
+            var id_count = parseInt(document.getElementById("id_start").value) -1;
+
+            miro.onReady(() => {
+            miro.initialize({
+                extensionPoints: {
+                bottomBar: {
+                    title: 'Xzerpt',
+                    svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+                    onClick: () => {
+            for (row of rows){
+                if (row == ''){
+                    continue;
+                }
+                id_count += 1;
+                console.log("this is a row")
+                console.log(row)
+                var fields = row.split('|');
+                await miro.board.widgets.create({type: 'card', text: field[3]})
+            
+                }
+                
+                
+            localStorage.setItem('all_csv', '');
+        }
+                }
+                }
+            })
+            })
+        }
+
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone');
+    
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
             }
+       
+        function removeDragData(ev) {
+      console.log('Removing drag data');
+    
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to remove the drag data
+        ev.dataTransfer.items.clear();
+      } else {
+        // Use DataTransfer interface to remove the drag data
+        ev.dataTransfer.clearData();
+        document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
+      }
+    }
+        
+    function dropHandler(ev) {
+        // alert("Files Dropped!")
+      
+     
+      console.log('File(s) dropped');
+    
+      // Prevent default behavior (Prevent file from being opened)
+      ev.preventDefault();
+    
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+          // If dropped items aren't files, reject them
+          if (ev.dataTransfer.items[i].kind === 'file') {
+            var file = ev.dataTransfer.items[i].getAsFile();
+            var fileNameP = document.createElement("li");
+            fileNameP.innerHTML = ev.dataTransfer.files[i].name;
+            document.getElementById("drop_zone").appendChild(fileNameP);
+            console.log('... file[' + i + '].name = ' + file.name);
+          
+            var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('all_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
           }
         }
-      })
-    })
+      } else {
+        // Use DataTransfer interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+          console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+          var fileNameP = document.createElement("li");
+            fileNameP.innerHTML = ev.dataTransfer.files[i].name;
+            document.getElementById("drop_zone").appendChild(fileNameP);
+          var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('all_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
+       
+      
+        
+        }
+        
+      } 
+        console.log("heres local csv storage:");
+        console.log(localStorage.getItem('all_csv'));
+      // Pass event to removeDragData for cleanup
+      removeDragData(ev)
+    }
+        
+    </script>
+    <script>
+        
+   
     </script>
 </head>
+<body>
+    <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
+      </div>
+</body>
 </html>
