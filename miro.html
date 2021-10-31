@@ -38,6 +38,7 @@
             }
        
         function removeDragData(ev) {
+            document.getElementById("drop_zone").innerHTML = "";
       console.log('Removing drag data');
     
       if (ev.dataTransfer.items) {
