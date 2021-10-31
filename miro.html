@@ -4,15 +4,8 @@
     <script src="https://miro.com/app/static/sdk.1.1.js"></script>
     
     <script>
-        miro.onReady(() => {
-        miro.initialize({
-            extensionPoints: {
-            bottomBar: {
-                title: 'Xzerpt Cards',
-                svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
-                onClick: () => {
-                    
-        var csv_data = localStorage.getItem('miro_csv');
+        function createMiroWidgets(){
+            var csv_data = localStorage.getItem('miro_csv');
         if (csv_data != null){
         console.log("this is csv_data");
         console.log(csv_data);
@@ -33,12 +26,22 @@
             await miro.board.widgets.create({type: 'card', text: field[3]})
         
             }
-            
-        } 
+        }
+    }
+        miro.onReady(() => {
+        miro.initialize({
+            extensionPoints: {
+            bottomBar: {
+                title: 'Xzerpt Cards',
+                svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+                onClick: () => {
+                    createMiroWidgets();  
+         
         localStorage.setItem('miro_csv', '');
+        }
     }
             }
-            }
+            
         })
         })
     
