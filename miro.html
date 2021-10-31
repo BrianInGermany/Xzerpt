@@ -117,7 +117,7 @@
             div.setAttribute('ondragover', "dragOverHandler(event);" );
             div.innerHTML = "<button type='button' id='send_files' onclick='clear_and_gen_cards()'>Create Cards</button><br/><ul id='drop_text'>Drag file(s) here to create Xzerpt cards from.</ul>";
         
-            document.getElementsByClassName('angular-root ally-app-root')[0].appendChild(div);
+            document.getElementsByTagName("body")[0].appendChild(div);
         
         
         
