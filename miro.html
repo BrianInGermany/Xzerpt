@@ -11,7 +11,9 @@
                 title: 'Xzerpt Cards',
                 svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
                 onClick: () => {
+                    
         var csv_data = localStorage.getItem('miro_csv');
+        if (csv_data != null){
         console.log("this is csv_data");
         console.log(csv_data);
         var rows = csv_data.split('\\r\\n');
@@ -32,7 +34,7 @@
         
             }
             
-            
+        } 
         localStorage.setItem('miro_csv', '');
     }
             }
@@ -57,7 +59,6 @@
     } else {
     // Use DataTransfer interface to remove the drag data
     ev.dataTransfer.clearData();
-    document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
     }
 }
 
