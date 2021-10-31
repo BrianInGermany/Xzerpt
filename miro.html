@@ -9,6 +9,9 @@
         
         console.log("this is csv_data");
         console.log(csv_data);
+        if (csv_data === null){
+            csv_data = "";
+        }
         var rows = csv_data.split('\\r\\n');
         rows = rows[0].split('\r\n');
         console.log("this is rows:");
