@@ -23,7 +23,7 @@
             console.log(row)
             var fields = row.split('|');
             
-            await miro.board.widgets.create({type: 'card', text: field[3]})
+            miro.board.widgets.create({type: 'card', text: field[3]})
         
             }
         
