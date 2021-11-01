@@ -6,7 +6,7 @@ Record your ideas in a online interface and then create printable Xzerpt cards y
 
 Use the Xzerpt interface at __[xzerpt.com/input](https://xzerpt.com/input)__. 
 
-__New!__ [Import Xzerpt cards to your Miro Board](https://miro.com/oauth/authorize/?response_type=code&client_id=3074457366725033878&redirect_uri=%2Fconfirm-app-install%2F)
+__New!__ [Import Xzerpt cards to your Miro Board](/xzerpt_miro_readme)
 ## Usage
 
 ### 1. Data collection
