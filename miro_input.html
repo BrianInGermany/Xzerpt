@@ -65,9 +65,8 @@ function clear_and_gen_cards(ev){
                var widget = miro.board.widgets.create(
                  {
                 "type": "card",
-                "url": fields[1],
                 "title": fields[3],
-                "description": fields[4] + "<br/><br/><b>" + fields[0] + "<br/>pp" + fields[2] + "</b>",
+                "description": fields[4] + "<br/><br/><b>" + fields[0] + "<br/>pp" + fields[2] + "</b><br/><a href='" + fields[1] +"'>" + fields[1] + "</a>",
                 "x": x_val,
                 "y": y_val,
                 // allowed values between 0.02 to 2000 inclusive
@@ -84,7 +83,7 @@ function clear_and_gen_cards(ev){
                 }
             miro.showNotification("Cards have been added to board!")
             localStorage.setItem('miro_csv', '');
-            removeDragData(ev);
+           
         }
         function dragOverHandler(ev) {
             console.log('File(s) in drop zone');
