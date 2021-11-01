@@ -39,7 +39,7 @@ LICENSE file in the root directory of this source tree.  -->
     if(old === null) old = "";
     localStorage.setItem(name, old + data);
 }
-function clear_and_gen_cards(){
+function clear_and_gen_cards(ev){
             
             var csv_data = localStorage.getItem('miro_csv');
             console.log("this is csv_data");
@@ -81,6 +81,7 @@ function clear_and_gen_cards(){
                 }
             miro.board.showNotification("Cards have been added to board!")
             localStorage.setItem('miro_csv', '');
+            removeDragData(ev);
         }
         function dragOverHandler(ev) {
             console.log('File(s) in drop zone');
@@ -233,7 +234,7 @@ function clear_and_gen_cards(){
       </div>
   
     <br/>
-    <button type="button" id="send_files" onclick="clear_and_gen_cards()">Create Cards</button>
+    <button type="button" id="send_files" onclick="clear_and_gen_cards(event)">Create Cards</button>
     <br/>
     <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
     <p>See Github for <a href="https://github.com/BrianInGermany/Xzerpt">code and instructions</a>.</p>
