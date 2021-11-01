@@ -98,6 +98,8 @@ function clear_and_gen_cards(ev){
       if (ev.dataTransfer.items) {
         // Use DataTransferItemList interface to remove the drag data
         ev.dataTransfer.items.clear();
+        document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
+
       } else {
         // Use DataTransfer interface to remove the drag data
         ev.dataTransfer.clearData();
