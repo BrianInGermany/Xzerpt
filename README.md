@@ -4,7 +4,7 @@ Xzerpt uses idea clustering and source management to bring structure to your res
 
 Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
 
-Use the Xzerpt interface at [xzerpt.com/input](https://xzerpt.com/input). 
+Use the Xzerpt interface at ___[xzerpt.com/input](https://xzerpt.com/input)__. 
 ## Usage
 
 ### 1. Data collection
