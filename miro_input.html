@@ -54,13 +54,14 @@ function clear_and_gen_cards(){
                 if (row == ''){
                     continue;
                 }
+                
                 // id_count += 1;
                 console.log("this is a row")
                 console.log(row)
                 var fields = row.split('|');
                 y_val += 10;
                // create miro cards
-               miro.board.widgets.create(
+               var widget = miro.board.widgets.create(
                  {
                 "type": "card",
                 "url": fields[1],
@@ -71,9 +72,11 @@ function clear_and_gen_cards(){
                 // allowed values between 0.02 to 2000 inclusive
                 "scale": 0.5880494035837717
                  }
-              
-              
+                
                )
+               if (y_val == 0){
+                  miro.board.viewport.zoomToObject(widget)
+                }
              
                 }
             miro.board.showNotification("Cards have been added to board!")
