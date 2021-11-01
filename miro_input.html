@@ -60,8 +60,7 @@ function clear_and_gen_cards(ev){
                 console.log("this is a row")
                 console.log(row)
                 var fields = row.split('|');
-                y_val += 3;
-                x_val += 3;
+               
                // create miro cards
                var widget = miro.board.widgets.create(
                  {
@@ -76,10 +75,12 @@ function clear_and_gen_cards(ev){
                  }
                 
                )
+               
                if (y_val == 0){
                   miro.board.viewport.zoomToObject(widget)
                 }
-             
+                y_val += 3;
+                x_val += 3;
                 }
             miro.showNotification("Cards have been added to board!")
             localStorage.setItem('miro_csv', '');
