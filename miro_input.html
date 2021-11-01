@@ -83,7 +83,7 @@ function clear_and_gen_cards(ev){
                 }
        
             localStorage.setItem('miro_csv', '');
-            document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
+            document.getElementById("drop_zone").innerHTML = "Drag Xzerpt file(s) here to create Xzerpt cards from.";
 
            
         }
@@ -234,12 +234,13 @@ function clear_and_gen_cards(ev){
 <body id="targetElement">
     <h1>Xzerpt Card Creator</h1>
     <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
-        <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
+        <ul id="drop_text">Drag Xzerpt file(s) here to create Xzerpt cards from.</ul>
       </div>
   
     <br/>
     <button type="button" id="send_files" onclick="clear_and_gen_cards(event)">Create Cards</button>
     <br/>
+    <p>Visit <a href="https://xcerpt.com/">xcerpt.com</a> for instructions and input field.</p>
  
 
 </body>
