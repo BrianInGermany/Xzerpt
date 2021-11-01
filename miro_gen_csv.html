@@ -1,0 +1,213 @@
+<!doctype html>  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
+<meta name="description" content="a framework for clustering research notes">
+<meta name="title" content="Xzerpt">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xzerpt.com">
+<meta property="og:title" content="Xzerpt">
+<meta property="og:description" content="a framework for clustering research notes">
+<meta property="og:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://xzerpt.com">
+<meta property="twitter:title" content="Xzerpt">
+<meta property="twitter:description" content="a framework for clustering research notes">
+<meta property="twitter:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+
+<head>
+   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+   <title>Xzerpt</title>
+   <style>
+      *{
+         font-family: "Trebuchet MS";
+      }
+      input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button[type=button] {
+  background-color: #3a42b1;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+button[id=csv_button] {
+  background-color: #6b0f86;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+  
+</head>
+<html>  
+   <body>  
+      <h1 style = "text-align: left;">Xzerpt: a framework for clustering research notes</h1>  
+      
+       <h3>Find out more on <a href="https://github.com/BrianInGermany/Xzerpt">Github</a></h3>
+
+      <form action="" id="form" method="POST">
+         <p><b>Type</b></p>
+        <input type="radio" id="paraphrase" name="info_type" value="paraphrase">
+        <label for="paraphrase">paraphrase</label><br>
+        <input type="radio" id="quote" name="info_type" value="quote">
+        <label for="css">quote</label><br>
+        <input type="radio" id="own_opinion" name="info_type" value="own opinion">
+        <label for="javascript">own opinion</label>
+      <br/>
+         <label for="source"><b>Source</b></label><br/>
+         <input type="text" id="source" name="source">
+      <br/>
+         <label for="page"><b>Page</b></label><br/>
+         <input type="text" id="page" name="page">
+      <br/>
+      <label for="topic"><b>Topic</b></label><br>
+
+         <textarea class="input" id="topic" name="topic" rows="2" cols="80">
+</textarea>
+      <br/>
+         <label for="summary"><b>Statement</b></label><br>
+         <textarea class="input" id="summary" name="summary" rows="10" cols="80">
+</textarea>
+
+      
+         
+         <br/>
+         <input type="submit"  value="Cache Card"><div id="card_count"></div>
+         </form>
+         <button type="button" onclick="create_dl_csv()">Download CSV and Clear Cache</button>
+         <br/>
+         <button type="button" id="csv_button" onclick="window.location.href = 'miro_input.html';">Create Cards from Xzerpt CSV</button>
+
+   </body> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>
+      var form = document.getElementById('form');
+
+
+      function create_dl_csv(){
+
+      const form_dict_list = JSON.parse(localStorage.getItem('form_list'))
+
+      var rows = new Array()
+      let csvContent = "data:text/csv;charset=utf-8,";
+
+      for (formular of form_dict_list){
+         // console.log("this is type of formular")
+         // console.log(typeof formular)
+         // var formular_row = new Array()
+         var fields = new Array();
+         for (let i = 0; i < 5; i++){
+         fields.push("");}
+         console.log("This is formular");
+         console.log(formular);
+         for (field of formular){
+            // console.log("this is type of field");
+            // console.log(typeof field);
+            if (field["name"] == "info_type"){
+               fields[0] = field["value"];
+            }
+            else if (field["name"] == "source"){
+               fields[1] = field["value"];
+            }
+            else if (field["name"] == "page"){
+               fields[2] = field["value"];
+            }
+            else if (field["name"] == "topic"){
+               
+               fields[3] = field["value"];
+               if (fields[3].includes("\r\n")){
+                  console.log("Found r and n in topic");
+                  fields[3] = fields[3].replace(/\r\n/g, " ")
+               }
+            }
+            else if (field["name"] == "summary"){
+             
+               fields[4] = field["value"];
+               if (fields[4].includes("\r\n")){
+                  console.log("Found r and n in statement");
+                  fields[4] = fields[4].replace(/\r\n/g, " ")
+               }
+            }
+         }
+         // formular_row.push(fields)
+         // console.log(fields);
+         // rows.push(fields)
+         row_string = fields.join("|");
+         csvContent += row_string + "\r\n";
+      }
+
+      // console.log("Here is ROWS")
+      // console.log(rows)
+      // rows = JSON.parse(rows);
+      
+      
+   
+      // rows.forEach(function(rowArray) {
+      // let row = rowArray.join("§");
+      // csvContent += row + "\r\n";
+      // });
+
+      var encodedUri = encodeURI(csvContent);
+      window.open(encodedUri);
+      localStorage.clear();
+      document.getElementById("card_count").innerHTML = "0 Cards in Cache"
+      }
+      
+
+      function appendToStorage(name, data){
+      var old_list;
+      
+      if (localStorage.getItem(name) === null){
+         old_list = new Array();
+      }
+      
+      else {old_list = JSON.parse(localStorage.getItem(name));}
+
+      
+      old_list.push(data);
+      
+      localStorage.setItem(name, JSON.stringify(old_list));
+   }
+
+      
+      function logSubmit(event) {
+         appendToStorage('form_list', $("form").serializeArray());
+         if (localStorage.getItem("card_count") === null){
+            localStorage.setItem("card_count", 0)
+         }
+         card_count = parseInt(localStorage.getItem("card_count")) + 1
+         localStorage.setItem("card_count", card_count)
+         document.getElementById("card_count").innerHTML = card_count + " Cards in Cache";
+         event.preventDefault();
+         console.log(`Form Submitted! Time stamp: ${event.timeStamp}`);
+         document.getElementById('form').reset();
+         console.log($('form').serializeArray());
+         console.log(localStorage.getItem('form_list'));
+         
+      }
+      
+      // const log = document.getElementById('log');
+      form.addEventListener('submit', logSubmit);
+</script> 
+</html>  
