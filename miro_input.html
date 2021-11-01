@@ -1,0 +1,232 @@
+<!-- Copyright (c) 2021, Brian Junker-Latocha
+All rights reserved.
+
+This source code is licensed under the BSD-style license found in the
+LICENSE file in the root directory of this source tree.  -->
+
+<!doctype html>  
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Primary Meta Tags -->
+<meta name="description" content="a framework for clustering research notes">
+<meta name="title" content="Xzerpt Card Creator">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://xzerpt.com/csv_input.html">
+<meta property="og:title" content="Xzerpt Card Creator">
+<meta property="og:description" content="a framework for clustering research notes">
+<meta property="og:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://xzerpt.com/csv_input.html">
+<meta property="twitter:title" content="Xzerpt">
+<meta property="twitter:description" content="a framework for clustering research notes">
+<meta property="twitter:image" content="https://xzerpt.com/exampleImages/xzerpt.png">
+
+<head>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    
+    <script>
+        function appendToStorage(name, data){
+    var old = localStorage.getItem(name);
+    if(old === null) old = "";
+    localStorage.setItem(name, old + data);
+}
+function clear_and_gen_cards(){
+            
+            var csv_data = localStorage.getItem('miro_csv');
+            console.log("this is csv_data");
+            console.log(csv_data);
+            var rows = csv_data.split('\\r\\n');
+            rows = rows[0].split('\r\n');
+            console.log("this is rows:");
+            console.log(rows);
+         
+
+            for (row of rows){
+                if (row == ''){
+                    continue;
+                }
+                id_count += 1;
+                console.log("this is a row")
+                console.log(row)
+                var fields = row.split('|');
+                
+               // create miro cards
+               miro.board.widgets.create({"type": "card", "title": fields[3], "description": fields[4]})
+             
+                }
+            localStorage.setItem('miro_csv', '');
+        }
+        function dragOverHandler(ev) {
+            console.log('File(s) in drop zone');
+    
+            // Prevent default behavior (Prevent file from being opened)
+            ev.preventDefault();
+            }
+       
+        function removeDragData(ev) {
+      console.log('Removing drag data');
+    
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to remove the drag data
+        ev.dataTransfer.items.clear();
+      } else {
+        // Use DataTransfer interface to remove the drag data
+        ev.dataTransfer.clearData();
+        document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
+      }
+    }
+        
+    function dropHandler(ev) {
+        // alert("Files Dropped!")
+      
+     
+      console.log('File(s) dropped');
+    
+      // Prevent default behavior (Prevent file from being opened)
+      ev.preventDefault();
+    
+      if (ev.dataTransfer.items) {
+        // Use DataTransferItemList interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.items.length; i++) {
+          // If dropped items aren't files, reject them
+          if (ev.dataTransfer.items[i].kind === 'file') {
+            var file = ev.dataTransfer.items[i].getAsFile();
+            var fileNameP = document.createElement("li");
+            fileNameP.innerHTML = ev.dataTransfer.files[i].name;
+            document.getElementById("drop_zone").appendChild(fileNameP);
+            console.log('... file[' + i + '].name = ' + file.name);
+          
+            var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('miro_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
+          }
+        }
+      } else {
+        // Use DataTransfer interface to access the file(s)
+        for (var i = 0; i < ev.dataTransfer.files.length; i++) {
+          console.log('... file[' + i + '].name = ' + ev.dataTransfer.files[i].name);
+          var fileNameP = document.createElement("li");
+            fileNameP.innerHTML = ev.dataTransfer.files[i].name;
+            document.getElementById("drop_zone").appendChild(fileNameP);
+          var fr = new FileReader();
+        fr.onload = function(e) {
+            // e.target.result should contain the text
+            appendToStorage('miro_csv', e.target.result.toString());
+        };
+        fr.readAsText(file);
+       
+      
+        
+        }
+        
+      } 
+        console.log("heres local csv storage:");
+        console.log(localStorage.getItem('miro_csv'));
+      // Pass event to removeDragData for cleanup
+      removeDragData(ev)
+    }
+        
+    
+    
+        
+    </script>
+   <title>Xzerpt Card Creator</title>
+   
+   <style>
+       *{
+        font-family: "Trebuchet MS";
+       }
+.styled-table {
+  font-family: "Trebuchet MS";
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.styled-table td, .styled-table th {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+
+
+.styled-table th {
+  /* padding-top: 12px;
+  padding-bottom: 12px; */
+  /* text-align: left; */
+  background-color: white;
+  color: black;
+}
+.avoid {
+    page-break-inside: avoid !important;
+    margin: 4px 0 4px 0;  /* to keep the page break from cutting too close to the text in the div */
+  }
+
+
+  input[type=button], input[type=submit], input[type=reset], button[type=button] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+#drop_zone {
+  /* border: 5px solid blue; */
+  width:  200px;
+  height: 200px;
+  background-color: #0e70e0;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  overflow:auto; 
+  
+}
+
+      input[type=button], input[type=submit], input[type=reset] {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+   </style>
+</head>
+<body id="targetElement">
+    <h1>Xzerpt Card Creator</h1>
+    <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
+        <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
+      </div>
+    <br/>
+    <label for="id_start">Number to start IDs from:</label><br/>
+    <input id="id_start" type="number" name="id_start" min="1" value="1"> 
+    <br/>
+    <button type="button" id="send_files" onclick="clear_and_gen_cards()">Create Cards</button>
+    <br/>
+    <p>By <a href="https://thejunkyard.cc">Brian Junker-Latocha</a>.</p>
+    <p>See Github for <a href="https://github.com/BrianInGermany/Xzerpt">code and instructions</a>.</p>
+
+</body>
+<script>
+
+</script>
+
+
+</html>
+
