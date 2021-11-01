@@ -5,6 +5,8 @@ Xzerpt uses idea clustering and source management to bring structure to your res
 Record your ideas in a online interface and then create printable Xzerpt cards you can cluster into stacks on your desk.
 
 Use the Xzerpt interface at __[xzerpt.com/input](https://xzerpt.com/input)__. 
+
+__New!__ [Import Xzerpt cards to your Miro Board](https://miro.com/oauth/authorize/?response_type=code&client_id=3074457366725033878&redirect_uri=%2Fconfirm-app-install%2F)
 ## Usage
 
 ### 1. Data collection
