@@ -83,6 +83,8 @@ function clear_and_gen_cards(ev){
                 }
        
             localStorage.setItem('miro_csv', '');
+            document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
+
            
         }
         function dragOverHandler(ev) {
@@ -94,7 +96,6 @@ function clear_and_gen_cards(ev){
        
         function removeDragData(ev) {
       console.log('Removing drag data');
-      document.getElementById("drop_zone").innerHTML = "Drag file(s) here to create Xzerpt cards from.";
 
       if (ev.dataTransfer.items) {
         // Use DataTransferItemList interface to remove the drag data
