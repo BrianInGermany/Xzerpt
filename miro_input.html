@@ -45,7 +45,7 @@ function clear_and_gen_cards(){
             console.log(csv_data);
             var rows = csv_data.split('\\r\\n');
             rows = rows[0].split('\r\n');
-            console.log("this is rows:");
+            console.log("this is rows:");drop_zone
             console.log(rows);
          
 
@@ -213,9 +213,7 @@ function clear_and_gen_cards(){
     <div id="drop_zone" class="container" ondrop="dropHandler(event);" ondragover="dragOverHandler(event);">
         <ul id="drop_text">Drag file(s) here to create Xzerpt cards from.</ul>
       </div>
-    <br/>
-    <label for="id_start">Number to start IDs from:</label><br/>
-    <input id="id_start" type="number" name="id_start" min="1" value="1"> 
+  
     <br/>
     <button type="button" id="send_files" onclick="clear_and_gen_cards()">Create Cards</button>
     <br/>
