@@ -60,7 +60,20 @@ function clear_and_gen_cards(){
                 var fields = row.split('|');
                 
                // create miro cards
-               miro.board.widgets.create({"type": "card", "title": fields[3], "description": fields[4]})
+               miro.board.widgets.create(
+                 {
+                "type": "card",
+                "url": fields[1],
+                "title": fields[3],
+                "description": fields[4] + "<br/><br/>" + fields[0] + "<br/> pp" + fields[2],
+                "x": 2765.0162210794065,
+                "y": 429.84819860612595,
+                // allowed values between 0.02 to 2000 inclusive
+                "scale": 0.5880494035837717
+                 }
+              
+              
+               )
              
                 }
             localStorage.setItem('miro_csv', '');
