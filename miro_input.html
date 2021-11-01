@@ -50,6 +50,7 @@ function clear_and_gen_cards(ev){
             console.log(rows);
          
             var y_val = 0;
+            var x_val = 0;
             for (row of rows){
                 if (row == ''){
                     continue;
@@ -59,7 +60,8 @@ function clear_and_gen_cards(ev){
                 console.log("this is a row")
                 console.log(row)
                 var fields = row.split('|');
-                y_val += 1;
+                y_val += 3;
+                y_val += 3;
                // create miro cards
                var widget = miro.board.widgets.create(
                  {
@@ -70,7 +72,7 @@ function clear_and_gen_cards(ev){
                 "x": 2765.0162210794065,
                 "y": y_val,
                 // allowed values between 0.02 to 2000 inclusive
-                "scale": 0.5880494035837717
+       
                  }
                 
                )
