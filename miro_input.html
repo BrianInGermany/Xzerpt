@@ -39,6 +39,24 @@ LICENSE file in the root directory of this source tree.  -->
     if(old === null) old = "";
     localStorage.setItem(name, old + data);
 }
+
+function shuffle(array) {
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
 function clear_and_gen_cards(ev){
             
             var csv_data = localStorage.getItem('miro_csv');
@@ -48,7 +66,7 @@ function clear_and_gen_cards(ev){
             rows = rows[0].split('\r\n');
             console.log("this is rows:");
             console.log(rows);
-         
+            rows = shuffle(rows);
             var y_val = 0;
             var x_val = 0;
             for (row of rows){
